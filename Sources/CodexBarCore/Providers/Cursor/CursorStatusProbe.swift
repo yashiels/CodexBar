@@ -610,7 +610,7 @@ public struct CursorStatusSnapshot: Sendable {
         let resolvedOnDemandUsed: Double
         let resolvedOnDemandLimit: Double?
         // Your own on-demand spend to surface alongside a shared team pool (nil when the budget is personal).
-        var personalOnDemandUsed: Double?
+        var personalOnDemandUsed: Double? = nil
         if (self.onDemandLimitUSD ?? 0) > 0 {
             resolvedOnDemandUsed = self.onDemandUsedUSD
             resolvedOnDemandLimit = self.onDemandLimitUSD

@@ -163,8 +163,8 @@ struct CursorEnterpriseUsageTests {
                 rawJSON: nil)
 
         let cost = snapshot.toUsageSnapshot().providerCost
-        #expect(cost?.used == 13_111.25) // team pool used
-        #expect(cost?.limit == 20_000.0) // team pool limit
+        #expect(cost?.used == 13111.25) // team pool used
+        #expect(cost?.limit == 20000.0) // team pool limit
         #expect(cost?.personalUsed == 44.71) // this account's own on-demand spend
     }
 

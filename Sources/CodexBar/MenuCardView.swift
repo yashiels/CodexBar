@@ -102,7 +102,7 @@ struct UsageMenuCardView: View {
             let percentUsed: Double?
             let spendLine: String
             let percentLine: String?
-            var personalSpendLine: String? = nil
+            var personalSpendLine: String?
         }
 
         let provider: UsageProvider
