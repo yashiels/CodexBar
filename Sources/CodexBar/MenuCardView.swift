@@ -430,9 +430,7 @@ private struct ProviderCostContent: View {
             }
             if let personalSpendLine = self.section.personalSpendLine {
                 Text(personalSpendLine)
-                    .font(.footnote)
-                    .foregroundStyle(MenuHighlightStyle.secondary(self.isHighlighted))
-                    .lineLimit(1)
+                    .font(.footnote).foregroundStyle(MenuHighlightStyle.secondary(self.isHighlighted)).lineLimit(1)
             }
         }
     }

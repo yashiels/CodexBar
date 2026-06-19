@@ -5,6 +5,26 @@ import Testing
 @Suite(.serialized)
 struct CursorEnterpriseUsageTests {
     @Test
+    func `legacy provider cost snapshot decodes without personal spend`() throws {
+        let json = """
+        {
+            "used": 12.5,
+            "limit": 100,
+            "currencyCode": "USD",
+            "period": "Monthly",
+            "resetsAt": null,
+            "nextRegenAmount": null,
+            "updatedAt": 0
+        }
+        """
+
+        let snapshot = try JSONDecoder().decode(ProviderCostSnapshot.self, from: Data(json.utf8))
+
+        #expect(snapshot.used == 12.5)
+        #expect(snapshot.personalUsed == nil)
+    }
+
+    @Test
     func `parses enterprise overall and pooled usage summary`() throws {
         // Live Cursor Enterprise payload (sanitized). The Pro/Hobby `plan` block is absent;
         // instead Cursor reports `individualUsage.overall` (personal cap) and `teamUsage.pooled`

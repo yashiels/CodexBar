@@ -52,6 +52,8 @@ struct CursorMenuCardModelTests {
         #expect(absent.providerCost?.personalSpendLine == nil)
         #expect(zero.providerCost?.personalSpendLine == nil)
         #expect(personal.heightFingerprint(section: "card") != absent.heightFingerprint(section: "card"))
+        #expect(!personal.hasCompatibleTrackedLayout(with: absent))
+        #expect(!absent.hasCompatibleTrackedLayout(with: personal))
     }
 
     @Test
